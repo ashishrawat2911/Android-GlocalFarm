@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">GlocalFarm</string>
+    <string name="enter_phone_number">Phone Number</string>
+    <string name="enter_password">Password</string>
+    <string name="login">login</string>
+    <string name="trouble_with_login">Trouble with Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="enter_name">Name</string>
+    <string name="address_line_one">Address Line 1</string>
+    <string name="address_line_two">Address Line 2</string>
+    <string name="address_line_three">Address Line 3</string>
+    <string name="zip_code">Zip Code</string>
+    <string name="re_enter_password">Re-Enter Password</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="categories">Categories</string>
+    <string name="suggestions">Suggestions</string>
+</resources>
