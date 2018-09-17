@@ -13,6 +13,7 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.EditText;
 
 import com.glocalfarm.adaptor.CategoriesAdaptor;
@@ -43,6 +44,7 @@ public class VegetableCategoryFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_vegetable_category, container, false);
+        getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         //instantiate RecyclerView
         categoriesRecyclerView = view.findViewById(R.id.categories_recycler_view);
         searchEditText = view.findViewById(R.id.categories_vegetable_search_edit_text);
@@ -66,7 +68,8 @@ public class VegetableCategoryFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (categoriesAdaptor != null) categoriesAdaptor.getFilter().filter(s.toString().toLowerCase());
+                if (categoriesAdaptor != null)
+                    categoriesAdaptor.getFilter().filter(s.toString().toLowerCase());
             }
 
             @Override

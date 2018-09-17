@@ -11,6 +11,7 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.EditText;
 
 import com.glocalfarm.R;
@@ -41,6 +42,7 @@ public class FruitsCategoryFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_fruits_category, container, false);
+        getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         //instantiate RecyclerView
         categoriesRecyclerView = view.findViewById(R.id.categories_recycler_view);
         searchEditText = view.findViewById(R.id.categories_vegetable_search_edit_text);
