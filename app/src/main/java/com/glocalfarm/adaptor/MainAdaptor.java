@@ -40,9 +40,9 @@ public class MainAdaptor extends FragmentPagerAdapter {
         switch (position) {
 
             case 0:
-                return mContext.getResources().getString(R.string.categories);
+                return mContext.getResources().getString(R.string.fruits);
             case 1:
-                return mContext.getResources().getString(R.string.suggestions);
+                return mContext.getResources().getString(R.string.vegetable);
 
         }
         return null;
