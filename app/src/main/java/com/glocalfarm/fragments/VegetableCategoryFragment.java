@@ -26,14 +26,14 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CategoryFragment extends Fragment {
+public class VegetableCategoryFragment extends Fragment {
 
     List<Vegetable> categoriesList;
     RecyclerView categoriesRecyclerView;
     CategoriesAdaptor categoriesAdaptor;
     EditText searchEditText;
 
-    public CategoryFragment() {
+    public VegetableCategoryFragment() {
         // Required empty public constructor
     }
 
@@ -42,7 +42,7 @@ public class CategoryFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_category, container, false);
+        View view = inflater.inflate(R.layout.fragment_vegetable_category, container, false);
         //instantiate RecyclerView
         categoriesRecyclerView = view.findViewById(R.id.categories_recycler_view);
         searchEditText = view.findViewById(R.id.categories_vegetable_search_edit_text);
