@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            android:src="@drawable/agricultre" />
+            android:src="@drawable/agriculture" />
 
         <EditText
             android:id="@+id/usernameLogin"
