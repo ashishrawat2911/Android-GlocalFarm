@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -53,7 +54,7 @@ public class FruitsCategoryFragment extends Fragment {
         categoriesAdaptor = new CategoriesAdaptor(getContext(), categoriesList);
         categoriesRecyclerView.setAdapter(categoriesAdaptor);
         //setting the layout of RecyclerView as Grid
-        categoriesRecyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        categoriesRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         return view;
     }
 
