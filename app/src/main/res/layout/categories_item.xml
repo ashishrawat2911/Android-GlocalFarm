@@ -20,23 +20,52 @@
             android:id="@+id/categories_image_view"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:adjustViewBounds="true"
             android:layout_gravity="center"
+            android:adjustViewBounds="true"
             android:src="@drawable/brinjal"
 
             />
 
-        <TextView
-            android:id="@+id/categories_title_text_view"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="8dp"
-            android:ellipsize="end"
-            android:maxLines="2"
-            android:text="afakjsbfkjbasf"
-            android:textStyle="bold" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/categories_title_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textSize="@dimen/text_size_xmedium"
+                android:text="afakjsbfkjbasf"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="afakjsbfkjbasf"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="afakjsbfkjbasf"
+                android:textStyle="bold" />
+        </LinearLayout>
 
 
     </LinearLayout>
