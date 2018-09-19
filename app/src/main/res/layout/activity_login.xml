@@ -4,14 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:orientation="vertical"
     android:background="@color/colorWhite"
+    android:orientation="vertical"
     tools:context=".activities.LoginActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:scrollbarAlwaysDrawHorizontalTrack="true">
 
         <ImageView
             android:id="@+id/loginImage"
@@ -47,6 +48,27 @@
             android:paddingEnd="10dp"
             android:paddingStart="10dp" />
 
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="40dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@string/buyer"
+                android:textSize="15sp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@string/seller"
+                android:textSize="15sp" />
+        </RadioGroup>
+
         <Button
             android:id="@+id/loginButton"
             android:layout_width="match_parent"
@@ -56,8 +78,8 @@
             android:layout_marginStart="70dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/company_color_back"
-            android:text="@string/login"
             android:onClick="login"
+            android:text="@string/login"
             android:textColor="@color/black" />
 
         <TextView
@@ -71,19 +93,20 @@
             android:text="@string/trouble_with_login"
             android:textColor="@color/black"
             android:textStyle="bold" />
+
         <Button
             android:id="@+id/signInLoginButton"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
             android:layout_marginEnd="70dp"
             android:layout_marginStart="70dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/company_color_back"
-            android:text="@string/sign_up"
             android:onClick="loginSignUp"
-            android:textColor="@color/black"
-            android:layout_marginBottom="20dp"/>
+            android:text="@string/sign_up"
+            android:textColor="@color/black" />
     </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>

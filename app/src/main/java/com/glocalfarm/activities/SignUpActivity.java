@@ -24,4 +24,8 @@ public class SignUpActivity extends AppCompatActivity {
         startActivity(new Intent(SignUpActivity.this, cls));
         finish();
     }
+
+    public void SignU(View view) {
+        goIntent(MainActivity.class);
+    }
 }

@@ -126,6 +126,7 @@
             android:paddingEnd="8dp"
             android:paddingStart="8dp"
             android:text="@string/sign_up"
+            android:onClick="SignUp"
             android:textColor="#FFFF" />
         <TextView
             android:layout_width="wrap_content"

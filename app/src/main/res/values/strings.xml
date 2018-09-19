@@ -17,4 +17,6 @@
     <string name="fruits">Fruits</string>
     <string name="vegetable">Vegetables</string>
     <string name="already_have_an_account">Already have an account? Login</string>
+    <string name="buyer">Buyer</string>
+    <string name="seller">Seller</string>
 </resources>
