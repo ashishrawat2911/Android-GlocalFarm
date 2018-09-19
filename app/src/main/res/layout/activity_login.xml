@@ -56,6 +56,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/company_color_back"
             android:text="@string/login"
+            android:onClick="login"
             android:textColor="@color/black" />
 
         <TextView
@@ -79,6 +80,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/company_color_back"
             android:text="@string/sign_up"
+            android:onClick="loginSignUp"
             android:textColor="@color/black"
             android:layout_marginBottom="20dp"/>
     </LinearLayout>
