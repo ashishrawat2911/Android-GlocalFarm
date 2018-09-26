@@ -4,11 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/nestedScrollView"
     android:background="@color/colorWhite"
     tools:context=".fragments.VegetableCategoryFragment">
 
     <LinearLayout
         android:orientation="vertical"
+        android:id="@+id/linearLayoutqqq"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

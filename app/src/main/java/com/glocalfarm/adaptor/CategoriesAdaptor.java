@@ -1,11 +1,16 @@
 package com.glocalfarm.adaptor;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomSheetDialog;
+import android.support.v4.app.FragmentManager;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
@@ -13,19 +18,24 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.glocalfarm.R;
+import com.glocalfarm.activities.MainActivity;
+import com.glocalfarm.fragments.BottomSheetFragment;
 import com.glocalfarm.models.Vegetable;
+import com.glocalfarm.utils.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CategoriesAdaptor extends RecyclerView.Adapter<CategoriesAdaptor.MyViewHolder>implements Filterable {
+public class CategoriesAdaptor extends RecyclerView.Adapter<CategoriesAdaptor.MyViewHolder> implements Filterable {
     private Context ctx;
     private List<Vegetable> categoriesList;
     private List<Vegetable> mFilteredList;
+    private OnItemClickListener onItemClickListener;
+
     public CategoriesAdaptor(Context ctx, List<Vegetable> categoriesList) {
         this.ctx = ctx;
         this.categoriesList = categoriesList;
-        this.mFilteredList=categoriesList;
+        this.mFilteredList = categoriesList;
     }
 
     @NonNull
@@ -33,7 +43,7 @@ public class CategoriesAdaptor extends RecyclerView.Adapter<CategoriesAdaptor.My
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v;
         v = LayoutInflater.from(ctx).inflate(R.layout.categories_item, parent, false);
-        return new MyViewHolder(v);
+        return new MyViewHolder(v,this);
     }
 
     @Override
@@ -68,7 +78,7 @@ public class CategoriesAdaptor extends RecyclerView.Adapter<CategoriesAdaptor.My
 
                     for (Vegetable vegetable : categoriesList) {
 
-                        if (vegetable.getName().toLowerCase().contains(charString)||vegetable.getName().toUpperCase().contains(charString) ) {
+                        if (vegetable.getName().toLowerCase().contains(charString) || vegetable.getName().toUpperCase().contains(charString)) {
 
                             filteredList.add(vegetable);
                         }
@@ -89,26 +99,41 @@ public class CategoriesAdaptor extends RecyclerView.Adapter<CategoriesAdaptor.My
             }
         };
     }
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        onItemClickListener = listener;
+    }
 
-    class MyViewHolder extends RecyclerView.ViewHolder {
+    public OnItemClickListener getOnItemClickListener() {
+        return onItemClickListener;
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(MyViewHolder item, int position);
+    }
+    public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        private CategoriesAdaptor adapter;
         TextView categoriesTitle;
         ImageView categoriesImage;
+        CardView cardView;
         // CardView cardView;
 
-        MyViewHolder(View itemView) {
+        MyViewHolder( View itemView,CategoriesAdaptor parent) {
             super(itemView);
+            itemView.setOnClickListener(this);
+            this.adapter = parent;
             categoriesTitle = itemView.findViewById(R.id.categories_title_text_view);
             categoriesImage = itemView.findViewById(R.id.categories_image_view);
-           /* cardView = itemView.findViewById(R.id.catCardView);
-            cardView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent i = new Intent(ctx, NewsListActivity.class);
-                    i.putExtra(Constants.NEWS_TYPE, categoriesList.get(getAdapterPosition()).getNewsType());
-                    ctx.startActivity(i);
-                }
-            });*/
+            cardView = itemView.findViewById(R.id.card_view_show_card);
+
+            }
+
+        @Override
+        public void onClick(View view) {
+            final OnItemClickListener listener = adapter.getOnItemClickListener();
+            if (listener != null) {
+                listener.onItemClick(this, getAdapterPosition());
+            }
         }
     }
-}
+    }
 

@@ -19,4 +19,5 @@
     <string name="already_have_an_account">Already have an account? Login</string>
     <string name="buyer">Buyer</string>
     <string name="seller">Seller</string>
+    <string name="add_to_cart">Add to cart</string>
 </resources>
